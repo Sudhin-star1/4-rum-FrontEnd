@@ -1,0 +1,35 @@
+/* Set the global font-family */
+body {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Center the links in the navbar */
+  /* nav ul {
+    justify-content: center;
+  } */
+  
+  /* Add padding to the navbar links */
+  nav li {
+    padding: 0.5rem;
+    list-style: none;
+  }
+  
+  /* Apply styles to the hero section */
+  /* section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+  }
+   */
+  /* Center the text in the hero section */
+  section h1, section p {
+    text-align: center;
+  }
+  
+  /* Apply padding to the features section */
+  section div {
+    padding: 1rem;
+  }
+  
