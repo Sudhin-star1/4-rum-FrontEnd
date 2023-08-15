@@ -6,6 +6,7 @@ import {createBrowserRouter,RouterProvider} from "react-router-dom";
 import Login from './components/login/Login';
 import UserProfile from './components/user/UserProfile';
 import CommentSection from './components/comment/Comment';
+import Search from './components/search/search';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "/comments-and-discussions",
     element: <CommentSection />
+  },
+  {
+    path:"/search",
+    element: <Search />
   }
 ]);
 

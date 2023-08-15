@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import UserProfile from "./components/user/UserProfile";
+import FileSearch from "./components/search/search";
 
 const App = () => {
   return (
@@ -35,7 +36,7 @@ const App = () => {
                 <Link to="/home">HOME</Link>
               </li>
               <li className="hover:underline cursor-pointer">
-                <Link to="#">ABOUT</Link>
+                <Link to="/search">Search</Link>
               </li>
               <li className="hover:underline cursor-pointer">
                 <Link to="#">CONTACT</Link>
@@ -44,7 +45,7 @@ const App = () => {
                 <Link to="/user-profile">Profile</Link>
               </li>
               <li className="hover:underline cursor-pointer">
-                <Link to="/comments-and-discussions">Comments and Discussions</Link>
+                <Link to="/comments-and-discussions">DISCUSSION</Link>
               </li>
               {/* Add other navbar items here */}
             </ul>
@@ -82,6 +83,17 @@ const App = () => {
               <div className="bg-white p-4 shadow-md rounded-md">
                 <h2 className="text-xl font-bold mb-2">Notes Sharing</h2>
                 <p>Upload and access important notes for your courses.</p>
+                
+                <br></br>
+                <br></br>
+                
+                <form method="POST" action="http://localhost:5050/api/upload" encType="multipart/form-data">
+                  <input type="file" name="file" />
+                  <input type="text" name="tags" />
+                  <input type="submit" value="Upload" />
+                </form>
+
+                {/* <ImageForm /> */}
               </div>
 
               {/* On-Campus News */}
@@ -90,6 +102,7 @@ const App = () => {
                 <p>
                   Stay updated with the latest news and events on your campus.
                 </p>
+                <FileSearch />
               </div>
             </div>
           </div>
