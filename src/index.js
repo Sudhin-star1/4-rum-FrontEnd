@@ -7,6 +7,8 @@ import Login from './components/login/Login';
 import UserProfile from './components/user/UserProfile';
 import CommentSection from './components/comment/Comment';
 import Search from './components/search/search';
+import Register from './components/login/register';
+import Upload from './components/upload/upload';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,14 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />
+  },
+  {
+    path: "/upload",
+    element: <Upload />
+  },
+  {
+    path: "/register",
+    element: <Register />
   },
   {
     path: "/user-profile",

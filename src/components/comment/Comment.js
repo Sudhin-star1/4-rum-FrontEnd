@@ -9,6 +9,9 @@ const CommentSection = () => {
     { id: 3, text: "This is the third comment", votes: 0 },
   ]);
 
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Set the user's login status
+
+
   const [newDiscussion, setNewDiscussion] = useState("");
 
   const handleVote = (id, voteType) => {
@@ -43,26 +46,34 @@ const CommentSection = () => {
         <nav className="bg-blue-500 p-4">
           <div className="container mx-auto flex items-center justify-between">
             {/* Logo */}
-            <ul className="flex justify-between text-white">
+            <ul className="flex text-white space-x-6">
               <li className="hover:underline cursor-pointer">
-                <Link to="/home">HOME</Link>
+                <Link to="/home">Home</Link>
               </li>
               <li className="hover:underline cursor-pointer">
-                <Link to="#">ABOUT</Link>
+                <Link to="/search">Search</Link>
               </li>
               <li className="hover:underline cursor-pointer">
-                <Link to="#">CONTACT</Link>
+                <Link to="#">Contact</Link>
               </li>
               <li className="hover:underline cursor-pointer">
-                <Link to="/user-profile">Profile</Link>
-              </li>
-              <li className="hover:underline cursor-pointer">
-                <Link to="/comments-and-discussions">
-                  Comments and Discussions
-                </Link>
+                <Link to="/comments-and-discussions">Discussions</Link>
               </li>
               {/* Add other navbar items here */}
             </ul>
+
+            {/* Profile or Sign In button */}
+            <div className="ml-auto">
+              {isLoggedIn ? (
+                <Link to="/user-profile" className="hover:underline text-white">
+                  Profile
+                </Link>
+              ) : (
+                <Link to="/login" className="hover:underline text-white">
+                  Sign In
+                </Link>
+              )}
+            </div>
           </div>
         </nav>
       </div>
